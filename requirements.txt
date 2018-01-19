@@ -1,8 +1,9 @@
-pillow
-pytz
 celery
+pillow
+pycrypto
 pyexcel
 pyexcel-xls
 pyexcel-xlsx
-pycrypto
+pytz
 redis
+requests
