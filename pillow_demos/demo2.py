@@ -1,8 +1,9 @@
-from io import BytesIO
+# encoding: utf-8
+import base64
 import random
 
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
-
+from io import BytesIO
 
 _letter_cases = "abcdefghjkmnpqrstuvwxy"                        # 小写字母
 _upper_cases = "ABCDEFGHJKLMNPQRSTUVWXY"                        # 大写字母
@@ -120,4 +121,4 @@ def generate_verify_image(size=(140, 30),
 if __name__ == "__main__":
     msstream, strs = generate_verify_image()
     print(strs)
-    print(msstream.getvalue())
+    print(base64.b64encode(msstream.getvalue()).decode())

@@ -32,6 +32,11 @@ class UrllibTest(unittest.TestCase):
         self.assertEqual(d['a'][0], '1')
         self.assertEqual(d['a'][1], '3')
 
+    def test_urlparse(self):
+        u = 'https://www.baidu.com/search?wd=123'
+        a = urllib.parse.urlparse(u)
+        print(a)
+
 
 if __name__ == '__main__':
     unittest.main()
