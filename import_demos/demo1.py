@@ -1,5 +1,6 @@
 import importlib
 import unittest
+from time import sleep
 
 
 class Test(unittest.TestCase):
@@ -18,6 +19,14 @@ class Test(unittest.TestCase):
         configs = getattr(importlib.import_module(module), name)
         print(configs)
         print(configs.CONFIG_1)
+
+    def test2(self):
+        for _ in range(10):
+            module_spec = importlib.util.find_spec('import_demos.configs')
+            module = importlib.util.module_from_spec(module_spec)
+            module_spec.loader.exec_module(module)
+            print(module.CONFIG_1)
+            sleep(5)
 
 
 if __name__ == '__main__':
