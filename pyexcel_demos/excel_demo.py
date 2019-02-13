@@ -2,11 +2,10 @@ import unittest
 from unittest.case import skip
 
 import pyexcel
-from pyexcel_xls.xls import XLSBook
+from pyexcel_xls.xlsr import XLSBook
 
 
 class Test(unittest.TestCase):
-
     def setUp(self):
         unittest.TestCase.setUp(self)
 
@@ -27,6 +26,7 @@ class Test(unittest.TestCase):
             print(sheet)
             print(sheet.array)
             print(sheet.csv)
+
 
 if __name__ == '__main__':
     unittest.main()
